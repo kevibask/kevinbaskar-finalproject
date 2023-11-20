@@ -1,0 +1,27 @@
+{% extends '_templates/base.njk' %}
+
+{% block page_title %}Activities{% endblock %}
+
+{% block page_description %}A list of all the activities you can do in Austin.{% endblock %}
+
+{% block content %}
+<article class="container">
+  <h1>Activities</h1>
+  <p>A list of all the activities you can do in Austin.</p>
+</article>
+
+  <div class="row">
+    {% for x in austin.activities %}
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ x.activity }}</h5>
+          <p class="card-text">{{ x.address}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

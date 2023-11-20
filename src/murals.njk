@@ -1,0 +1,27 @@
+{% extends '_templates/base.njk' %}
+
+{% block page_title %}Murals{% endblock %}
+
+{% block page_description %}A list of all the murals you can visit in Austin.{% endblock %}
+
+{% block content %}
+<article class="container">
+  <h1>Murals</h1>
+  <p>A list of all the murals you can visit in Austin.</p>
+</article>
+
+  <div class="row">
+    {% for x in austin.murals %}
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ x.name }}</h5>
+          <p class="card-text">{{ x.address}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}
