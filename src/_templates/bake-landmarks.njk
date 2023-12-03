@@ -1,25 +1,23 @@
 {% extends '_templates/base.njk' %}
+
 {% set relative_path = "../" %}
-{% from '_macros/prose.njk' import prose %}
 
-{% block page_title %}{{ headline }}{% endblock %}
+{% block page_title %}{{ name }}{% endblock %}
 
-{% block page_description %}{{ headline }} HEADLINE TEST {% endblock %}
+{% block page_description %}Test 2{% endblock %}
 
 {% block content %}
-  <article class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <img src="../img/cmc-austin-sunrise-20200614.jpg" alt="remember to change" class="img-fluid">
-        <p class="byline">By **INSERT SOMETHING***<br>
-        <span>Island Breeze Tribune</span></p>
-        <hr class="d-sm-none">
-      </div>
-      <div class="col-sm-8">
-        <img src="../img/{{ image }}" alt="" class="img-fluid mb-4">
-        <h1>{{ headline }}</h1>
-        {{ prose(post) }}
-      </div>
-    </div>
-  </article>
+
+<div class="container">
+  <h1>{{ name }}</h1>
+
+  <figure style="float: left; width: 450px; height: 300px; margin-right: 10px; shape-outside: inset(0);">
+    <img src="/img//landmarks/{{ image }}" alt="Dinosaur" width="100%" height="100%">
+  </figure>
+
+  <div class="text">
+    <p>{{ description | safe }}</p>
+  </div>
+</div>
+
 {% endblock %}

@@ -22,6 +22,14 @@
 @import 'nav';
 @import "jumbotron";
 
+// @import "~bootstrap/scss/functions";
+// @import "~bootstrap/scss/variables";
+// @import "~bootstrap/scss/mixins/breakpoints";
+
+
 h3 {
   font-size: 1.5rem;
 }
+
+// Change the font size base
+$font-size-base: 18px;

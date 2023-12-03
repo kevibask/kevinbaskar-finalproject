@@ -8,20 +8,32 @@
 <article class="container">
   <h1>Murals</h1>
   <p>A list of all the murals you can visit in Austin.</p>
-</article>
 
-  <div class="row">
+  <div class="row m-1">
     {% for x in austin.murals %}
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{ x.name }}</h5>
-          <p class="card-text">{{ x.address}}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="col-sm-6">
+
+        <div class="card mb-4 mx.auto">
+          <div class="row g-0 flex-lg-row">
+            {# <div class="col-md-4 flex-lg-column">
+              <img src="img/landmarks/{{ x.image }}" class="img-fluid rounded-start w-100" alt="..." style="height: calc(40vh - 50px); width: calc(60vw - 50px); object-fit: cover;">
+            </div> #}
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ x.name }}</h5>
+                <p class="card-text">{{ x.address}}</p>
+                <p class="card-text"><small class="text-body-secondary">Latitude: {{ x.latitude}}</small></p>
+                <p class="card-text"><small class="text-body-secondary">Longitude: {{ x.longitude}}</small></p>
+                {# <a href="{{ x.slug }}.html" class="btn btn-primary">{{ x.name }}</a> #}
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
-    </div>
     {% endfor %}
   </div>
+  
+</article>
 
 {% endblock %}
