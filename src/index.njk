@@ -1,4 +1,3 @@
-{% include "_includes/jumbotron.njk" %}
 {% extends '_templates/base.njk' %}
 
 
@@ -7,14 +6,14 @@
 
 <div class="container">
 
-  <p>Austin is more than just the capital of Texas. It is a hub of creativity, diversity and innovation. The vibrant entertainment, art and culture of this city attract millions of visitors every year, who come to enjoy its festivals, museums, music venues and restaurants. Austin is the place for everything, whether you are looking for adventure, education, inspiration or relaxation.</p>
+  <p>Austin is more than just the capitol of Texas. It's more than just the music capitol of the world. It is a hub of creativity, diversity and innovation. The vibrant entertainment, art and culture of this city attract millions of visitors every year, who come to enjoy its festivals, museums, music venues and restaurants. Austin is the place for everything, whether you are looking for adventure, education, inspiration or relaxation.</p>
 
   <div class="row mb-2">
     {% for x in austin.landmarks %}
       <div class="col-md-6 d-flex align-items-stretch">
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" style="width: 100%;">
           <div class="col-12 col-lg-8 p-4 d-flex flex-column position-static order-2 order-lg-1">
-            <strong class="d-inline-block mb-2 text-primary-emphasis">Landmarks</strong>
+            <strong class="d-inline-block mb-2 text-primary-emphasis">Landmark</strong>
             <h3 class="mb-0">{{ x.name }}</h3>
             <div class="mb-1 text-body-secondary">{{ x.established }}</div>
             <p class="card-text mb-auto">Activities: {{ x.activities }}</p>

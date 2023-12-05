@@ -5,35 +5,33 @@
 {% block page_description %}A list of all the activities you can do in Austin.{% endblock %}
 
 {% block content %}
-<article class="container">
+
+
+<div class="container">
+
   <h1>Activities</h1>
-  <p>A list of all the activities you can do in Austin.</p>
+  <p>Down below you’ll find a table that provides a comprehensive list of activities you can partake in when visiting Austin. This table serves as a guide to help you explore the vibrant city. Each activity listed offers a unique experience, showcasing the diverse culture and lifestyle of Austin. Use this as your go-to resource for planning an exciting itinerary in Austin.</p>
 
 
-  <div class="row m-1">
-    {% for x in austin.activities %}
-      <div class="col-sm-6">
-
-        <div class="card mb-4 mx.auto">
-          <div class="row g-0 flex-lg-row">
-            {# <div class="col-md-4 flex-lg-column">
-              <img src="img/landmarks/{{ x.image }}" class="img-fluid rounded-start w-100" alt="..." style="height: calc(40vh - 50px); width: calc(60vw - 50px); object-fit: cover;">
-            </div> #}
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">{{ x.activity }}</h5>
-                <p class="card-text">{{ x.date_time}}</p>
-                <p class="card-text"><small class="text-body-secondary">{{ x.address}}</small></p>
-                {# <a href="{{ x.slug }}.html" class="btn btn-primary">{{ x.name }}</a> #}
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    {% endfor %}
-  </div>
+  <table style="border-collapse: collapse; width: 100%; border: 1px solid #ddd;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th style="border: 1px solid #ddd; padding: 10px;">Activity</th>
+        <th style="border: 1px solid #ddd; padding: 10px;">Date/Time</th>
+        <th style="border: 1px solid #ddd; padding: 10px;">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for y in austin.activities %}
+        <tr style="border-bottom: 1px solid #ddd;">
+          <td style="border: 1px solid #ddd; padding: 10px;"><a href="{{ y.url }}">{{ y.activity }}</a></td>
+          <td style="border: 1px solid #ddd; padding: 10px;">{{ y.date_time }}</td>
+          <td style="border: 1px solid #ddd; padding: 10px;">{{ y.address }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
   
-</article>
+</div>
 
 {% endblock %}

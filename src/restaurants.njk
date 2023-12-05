@@ -1,0 +1,45 @@
+{% extends '_templates/base.njk' %}
+
+
+{% block page_title %}Restaurants{% endblock %}
+{% block content %}
+
+<div class="container">
+
+  <h1>Restaurants</h1>
+  <p>A city known for its vibrant food scene, Austin is home to a multitude of delicious restaurants. From local favorites to hidden gems, there's a dining spot to satisfy every palate. The list below features a selection of these fan-favorite establishments. Explore and enjoy the culinary delights that Austin has to offer.</p>
+  
+  <div class="row mb-2">
+    {% for x in restaurants.restaurants %}
+      <div class="col-md-6 d-flex align-items-stretch">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" style="width: 100%;">
+          <div class="col-12 col-lg-6 p-4 d-flex flex-column position-static order-2 order-lg-1">
+            <strong class="d-inline-block mb-2 text-primary-emphasis">Restaurant</strong>
+            <h3 class="mb-0">{{ x.name }}</h3>
+            <div class="mb-1 text-body-secondary">Category: {{ x.category }}</div>
+            <p class="card-text mb-auto">{{ x.address }}</p>
+            {# <a href="restaurants/{{ x.image }}.html" class="icon-link gap-1 icon-link-hover stretched-link">
+              Read More
+              <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+            </a> #}
+          </div>
+          <div class="col-12 col-lg-6 order-1 order-lg-2">
+            <div style="
+                background: url('img/restaurants/{{ x.image }}') no-repeat center center; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                width: 100%;
+                height: 250px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+
+</div>
+
+{% endblock %}

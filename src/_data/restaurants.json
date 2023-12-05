@@ -71,6 +71,30 @@
       "address": "2400 E Oltorf St #1A, Austin, TX 78741",
       "category": "Pan-Asian",
       "image": "888.jpg"
+    },
+    {
+      "name": "Swift's Attic",
+      "address": "315 Congress Ave, Austin, TX, 78701",
+      "category": "Global",
+      "image": "SwiftsAttic.jpg"
+    },
+    {
+      "name": "Moonshine Grill",
+      "address": "303 Red River St, Austin, TX, 78701",
+      "category": "Southern",
+      "image": "Moonshine.jpg"
+    },
+    {
+      "name": "Garrison",
+      "address": "500 E 4th St, Austin, TX 78701",
+      "category": "Grill",
+      "image": "Garrison2.jpg"
+    },
+    {
+      "name": "Roaring Fork",
+      "address": "701 Congress Ave, Austin, TX, 78701",
+      "category": "American",
+      "image": "RoaringFork.jpg"
     }
   ]
 }

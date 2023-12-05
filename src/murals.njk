@@ -5,35 +5,32 @@
 {% block page_description %}A list of all the murals you can visit in Austin.{% endblock %}
 
 {% block content %}
-<article class="container">
+
+<div class="container">
+
   <h1>Murals</h1>
-  <p>A list of all the murals you can visit in Austin.</p>
+  <p>Down below you’ll find a table that provides a comprehensive list of activities you can partake in when visiting Austin. This table serves as a guide to help you explore the vibrant city. Each activity listed offers a unique experience, showcasing the diverse culture and lifestyle of Austin. Use this as your go-to resource for planning an exciting itinerary in Austin.</p>
 
-  <div class="row m-1">
-    {% for x in austin.murals %}
-      <div class="col-sm-6">
 
-        <div class="card mb-4 mx.auto">
-          <div class="row g-0 flex-lg-row">
-            {# <div class="col-md-4 flex-lg-column">
-              <img src="img/landmarks/{{ x.image }}" class="img-fluid rounded-start w-100" alt="..." style="height: calc(40vh - 50px); width: calc(60vw - 50px); object-fit: cover;">
-            </div> #}
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">{{ x.name }}</h5>
-                <p class="card-text">{{ x.address}}</p>
-                <p class="card-text"><small class="text-body-secondary">Latitude: {{ x.latitude}}</small></p>
-                <p class="card-text"><small class="text-body-secondary">Longitude: {{ x.longitude}}</small></p>
-                {# <a href="{{ x.slug }}.html" class="btn btn-primary">{{ x.name }}</a> #}
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    {% endfor %}
-  </div>
+  <table style="border-collapse: collapse; width: 100%; border: 1px solid #ddd;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th style="border: 1px solid #ddd; padding: 10px;">Mural</th>
+        <th style="border: 1px solid #ddd; padding: 10px;">Latitude</th>
+        <th style="border: 1px solid #ddd; padding: 10px;">Longitude</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for y in austin.murals %}
+        <tr style="border-bottom: 1px solid #ddd;">
+          <td style="border: 1px solid #ddd; padding: 10px;"><a href="{{ y.map_location }}">{{ y.name }}</a></td>
+          <td style="border: 1px solid #ddd; padding: 10px;">{{ y.latitude }}</td>
+          <td style="border: 1px solid #ddd; padding: 10px;">{{ y.longitude }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
   
-</article>
+</div>
 
 {% endblock %}
